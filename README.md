@@ -2,13 +2,13 @@
 
 Simple Reusable Capistrano Scripts
 
-    - `cap deploy:restart`
-    - `cap deploy:stop`
-    - `cap deploy:start`
-    - `cap deploy:key`
+- `cap deploy:restart`
+- `cap deploy:stop`
+- `cap deploy:start`
+- `cap deploy:key`
 
 ```ruby
-
+options = {}
 ```
 
 ## Installation
@@ -36,8 +36,8 @@ Require everything
 Or require just what you need manually:
 
     # Capfile
-    require 'capistrano/nginx'
-    require 'capistrano/keys'
+    require 'capistrano/server/services'
+    require 'capistrano/server/keys'
 
 Please note that any `require` should be placed in `Capfile`, not `config/deploy.rb`.
 
