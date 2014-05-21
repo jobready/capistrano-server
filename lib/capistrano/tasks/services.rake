@@ -1,5 +1,6 @@
 namespace :deploy do
   [:start, :stop, :restart].each do |command|
+    desc "Run #{command} on servers"
     task command do
       on roles(:web) do
         execute :service, :puma, command, "app=#{current_path}"
@@ -19,5 +20,5 @@ namespace :deploy do
     end
   end
 
-  after :finishing, 'deploy:restart'
+  after 'deploy:finishing', 'deploy:restart'
 end
