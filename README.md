@@ -7,10 +7,6 @@ Simple Reusable Capistrano Scripts
 - `cap deploy:start`
 - `cap deploy:key`
 
-```ruby
-options = {}
-```
-
 ## Installation
 
 Add this line to your application's Gemfile:
@@ -40,6 +36,10 @@ Or require just what you need manually:
     require 'capistrano/server/keys'
 
 Please note that any `require` should be placed in `Capfile`, not `config/deploy.rb`.
+
+## Templates
+
+puma.rb and upstart scripts for sidekiq and puma are in the templates directory
 
 ## Contributing
 
