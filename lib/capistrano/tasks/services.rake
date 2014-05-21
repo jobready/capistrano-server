@@ -18,4 +18,6 @@ namespace :deploy do
       end
     end
   end
+
+  after :finishing, 'deploy:restart'
 end
