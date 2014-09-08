@@ -6,7 +6,7 @@ namespace :deploy do
       key = capture :cat, name
     end
     on roles(:all) do
-      execute :echo, key, '>>', '/root/.ssh/authorized_keys' unless key.empty?
+      execute :echo, key, '>>', '~/.ssh/authorized_keys' unless key.empty?
     end
   end
 end
