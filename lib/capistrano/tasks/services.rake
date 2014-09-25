@@ -20,5 +20,5 @@ namespace :deploy do
     end
   end
 
-  after 'deploy:finishing', 'deploy:restart'
+  after 'deploy:finished', 'deploy:restart'
 end
