@@ -3,11 +3,11 @@ namespace :deploy do
     desc "Run #{command} on servers"
     task command do
       on roles(:web) do
-        execute :service, :puma, command, "app=#{current_path}"
+        sudo :service, 'puma-manager', command
       end
 
       on roles(:worker) do
-        execute :service, :sidekiq, command, "index=0 app=#{current_path}"
+        sudo :service, 'sidekiq-manager', command
       end
     end
 
